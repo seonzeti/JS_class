@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+    <div id="pp"></div>
+    <button onclick="aa()">요청</button>
+
+
+    <script>
+
+        function aa() {
+            // jQuery를 통해 ajax를 요청을 할거에염 ! 
+            // 객체로 넣어줄거야 
+            $.ajax({
+                // jsp 사용할때는 form 태그의 action
+                url: "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20120101",
+                type: "get",
+                // data : , (여러분의 form 안의 정보)
+                success: function (res) {
+                    // alert('success!')
+                    // 성공했으면 내 데이터가 어디있을까? -> 매개변수 : 내가 담아온 데이터를 확인하기 위해서 
+                    // 현재 res에는 JSON 객체타입이 들어있음!
+
+
+                    // 왜 weely ~ 가 undefined 일까? 
+                    // 내가 만든 list가 아니니까! 데이터가 존재하지 않는거임 
+                    // res안에 있는 객체에 있는거니까! 실제 쓸려면 앞에 다 가져와야함 
+
+                    console.log(res)
+
+                    // res이라는 전체 객체 안에 boxOfficeResult 라는 key값이 있는거고 그 안에 우리가 꺼내오고싶은 정보가 있는거 
+                    // 우리가 진짜 필요한거에 한번 더 접근해야겠지! weeklyBoxofficeList 이라는 key값 -> 이거의 value가 array 
+                    // 이 안에 정보는 배열이니까 인덱스로 접근한다 [0]
+                    // Object .key 값을 통해서 꺼내온다 
+
+                    // 내가 10개를 다 가지고오려면? 반복문! 
+                    //for(let i =0 ; i < res.boxOfficeResult.weeklyBoxOfficeList.length ; i++){
+                    //    console.log(res.boxOfficeResult.weeklyBoxOfficeList[i].movieNm);
+                    //}
+
+                    
+                    var str = `<table>`
+                    str += `<tr>`
+                    str += `<th>순위</th>`
+                    str += `<th>영화제목</th>`
+                    str += `<th>개봉일자</th>`
+                    str += `</tr>`
+                    for (let i = 0; i < res.boxOfficeResult.weeklyBoxOfficeList.length; i++) {
+                        var temp = res.boxOfficeResult.weeklyBoxOfficeList[i];
+                        str += `<tr>`
+                        str += `<td>${temp.rank}</td>`
+                        str += `<td>${temp.movieNm}</td>`
+                        str += `<td>${temp.openDt}</td>`
+
+                        str += `</tr>`
+                    }
+                    str += `</table>`
+                    $('#pp').html(str)
+                },
+                error: function () {
+                    alert(123);
+                }
+
+
+            })
+        }
+
+    </script>
+</body>
+
+</html>

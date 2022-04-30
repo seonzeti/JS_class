@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // (1) 사용자에게 원하는 기호 입력받기 ('기호를 입력하시오') 
+        let emoji = prompt('기호를 입력하시오.');
+
+        // (2) 사용자에게 원하는 줄 입력받기 ('몇 줄 출력할지 입력하시오')
+        let row = parseInt(prompt('몇 줄 출력할지 입력하시오.'));
+
+        // (3) 그 기호로 피라미드를 만드는 pyramid 함수 선언 및 호출! 
+        function pyramid(emoji,row){
+            for (let i = 1 ; i<= row ; i++){
+                for (let j=1 ; j<=i ; j++){
+                    document.write(emoji);
+                }
+                document.write('<br>');
+            }
+        }
+
+        pyramid(emoji,row);
+
+    </script>
+</body>
+</html>

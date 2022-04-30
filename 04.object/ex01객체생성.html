@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체 (Object) 여러개의 데이터를 속성&값으로 저장
+        let pyo = {
+            // Case 2
+            name : '선영표',
+            subject : 'web',
+            location : 'CGIcenter',
+            intro : function(){
+                alert('안녕하세요~! 여러분 오늘 기획발표 파이팅!💘');
+            }
+        }
+        console.log(pyo);
+
+        // Case 1 
+        // pyo.name = '선영표';
+        // pyo.subject = 'web';
+        // pyo.location = 'CGI Center';
+
+        // 객체 내 데이터 접근 
+        console.log('이름 : '+pyo.name);
+        pyo.intro();
+
+    </script>
+</body>
+</html>

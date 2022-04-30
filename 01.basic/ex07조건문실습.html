@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. java, 안드로이드, web 세 과목의 점수를 입력받아주자! 
+
+        let javaScore = Number(prompt('Java 점수를 입력해주세요.'));
+        let andScore = Number(prompt('And 점수를 입력해주세요.'));
+        let webScore = Number(prompt('Web 점수를 입력해주세요.'));        
+        
+        
+        // 2. 1에서 입력받은 점수로 총점, 평균 점수, 등급을 설정해주자! 
+        let totalScore = javaScore + andScore + webScore
+
+        //  2-1. 단, 평균 점수는 소수점 없이 출력되도록 하자 
+        //  ** 소수점 2자리 50.00 50.12 
+        let avgScore = (totalScore/3).toFixed(2)
+        console.log(avgScore)
+                
+        //  2-2. 등급은 평균 점수가 90점 이상일땐 A / 80점 이상일 땐 B / 70점 C / 60 D 
+        //          그 이외는 F로 설정해준다. 
+        let grade = '';
+
+        if (avgScore >= 90){
+            grade = 'A'
+        } else if (avgScore >= 80){
+            grade = 'B'
+        } else if (avgScore >= 70){
+            grade = 'C'
+        } else if (avgScore >= 60){
+            grade = 'D'
+        } else {
+            grade = 'F'
+        }
+        // 3. 결과값 출력 
+        // 당신의 평균은 XX점이고 당신의 등급은 X입니다. 
+        console.log('당신의 평균은 ',avgScore,'점이고, 당신의 등급은 ',grade,'입니다.')
+    </script>
+</body>
+</html>

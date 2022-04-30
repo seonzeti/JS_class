@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            border: 1px solid;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        // 과목 수, 과목 이름, 과목 점수, 총점, 평균 
+        let subNum = 0;
+        let subName = [];
+        let subScore = [];
+        let totalScore = 0;
+        let avgScore = 0;
+
+        // (1) 과목 수 입력 
+        subNum = Number(prompt('과목 수 입력'));
+
+        // (2) 과목 수만큼 과목 이름을 입력할 수 있는 입력창 
+        for (let i=0; i<subNum; i++){
+            subName.push(prompt('점수를 입력할 과목을 입력하세요.'));            
+        }
+
+        // (3) 각 과목들의 점수를 입력할 수 있는 입력창 
+        for (let i=0; i<subName.length;i++){
+            // (4) 각 과목들의 점수, 총점, 평균 점수 도출 
+            let score = Number(prompt(subName[i]+'의 점수를 입력'));
+            subScore.push(score);
+            totalScore += score;
+        }
+
+        avgScore = parseInt(totalScore/subNum);
+        console.log(avgScore)
+
+        // (5) 각 점수, 총합, 평균을 HTML 문서 내에 테이블로 출력
+        //  ** document.write() 
+        // 내가 HTML 문서 내에 적고싶을땐? document.write() 
+        document.write('<table>')
+
+            // 첫번째 tr 
+            document.write('<tr>')
+                for(let i = 0; i<subNum ;i++){
+                    document.write('<td>'+subName[i]+'</td>')
+                }
+                document.write('<td>총합</td>')
+                document.write('<td>평균</td>')
+            document.write('</tr>')
+
+            // 두번째 tr
+            document.write('<tr>')
+                for(let i=0;i<subNum;i++){
+                    document.write('<td>'+subScore[i]+'</td>')
+                }
+                document.write('<td>'+totalScore+'</td>')
+                document.write('<td>'+avgScore+'</td>')
+            document.write('</tr>')
+
+        document.write('</table>')
+
+    </script>
+</body>
+</html>

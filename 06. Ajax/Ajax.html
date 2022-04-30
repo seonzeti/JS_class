@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <script>
+        $.ajax({
+            type : 'get',  // 요청방식 (get/post)
+            url : 'ex01', // 요청서버경로 
+            data : {'id' : id}, // 전송 데이터
+            contentType : 'application/json; charset=utf-8', //전송데이터 정보 (형식/인코딩)
+            dataType : 'json',
+            success : function(){ 
+                alert(data) //응답 성공 시 실행 함수 
+            },
+            error : function(){
+                alert('통신실패!❌') //응답 실패 시 실행 함수 
+            }
+        })
+
+    </script>
+</body> 
+</html>

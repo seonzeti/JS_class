@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <!-- 1. 파일을 다운로드 받아서 사용 -->
+   <script src="./js/jquery-3.6.0.min.js"></script>
+
+   <!-- 2. CDN을 이용해서 사용 -->
+   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+</head>
+<body>
+   <p>제이쿼리가 적용되지 않았습니다!</p>
+
+   <h1 id="h1Tag">
+      jQuery 활용해보기
+   </h1>
+
+   <script>
+      // 만약에, 브라우저가 DOM 트리를 생성해서 사용할 준비가 됐다면! 
+      // $(document).ready(function(){
+      //    $('p').text('DOM이 완성되었습니다. 코드를 작성해주세요!')
+      // })
+
+      $(function(){
+
+         //JS의 .innerText = jQuery의 .text
+         // $('p').text('<h1>DOM이 완성되었습니다. 코드를 작성해주세요!</h1>')
+
+         //JS의 .innerHTML = jQuery의 .html
+         $('p').html('<h1>DOM이 완성되었습니다. 코드를 작성해주세요!</h1>')
+      })
+
+      //JS의 .style = jQuery의 .css 
+      // $('#h1Tag').css('color','salmon')
+      // $('#h1Tag').css('font-family','궁서체')
+      // $('#h1Tag').css('background-color','lightgray')
+
+   </script>
+</body>
+</html>

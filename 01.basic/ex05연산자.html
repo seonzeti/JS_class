@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // js에서는 '/' 실제 나누기 연산 결과 
+        // '%' 나누고 난 몫 이후 나머지 
+
+        console.log(100/3)
+        console.log(100%3)
+
+        // 1. 나누기 연산자 
+        let num = 245;
+        let res = num - (num%100);
+        console.log(res)
+
+        // 2. 형변환 
+        let res2 = parseInt(num/100)*100;
+        console.log(res2)
+
+    </script>
+</body>
+</html>

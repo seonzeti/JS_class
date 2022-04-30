@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>지도 생성하기</title>
+
+</head>
+
+<body>
+    <!-- 지도를 표시할 div 입니다 -->
+    <div id="map" style="width:100%;height:350px;"></div>
+
+    <!-- 1. key값을 수정해서 꼽아줘야한당! -->
+    <!-- Google Map  -->
+    <!-- 실시간 위치를 하려면? geolocation API 이라는게 필요함! 이건 니들이 해보세욤 보안문제 있으니깐  -->
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=63209d42e8ad41599f7868f8eac29ce3"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(35.11074920318669, 126.87774044009879), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+        var map = new kakao.maps.Map(mapContainer, mapOption); 
+    </script>
+</body>
+
+</html>

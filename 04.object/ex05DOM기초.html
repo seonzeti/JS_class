@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">Hello, World!</p> 
+    <button onclick="innerFunc()">Click!</button>
+
+    <script>
+
+        let innerFunc= () => {
+              // 요소 = 태그 + 컨텐츠
+            let str = document.getElementById('text');
+            // console.log(str);
+
+            // 요소 안의 내용만 수정 or 접근하고 싶을 때 : .innerText
+            console.log(str.innerText);
+            // str.innerText = '<h1>Welcome!</h1>';
+            
+            // 태그까지 적용하고 싶을때는? 
+            str.innerHTML = '<h1>Welcome!</h1>';
+
+        }
+
+    </script>
+</body>
+</html>

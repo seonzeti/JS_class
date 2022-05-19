@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .slide-container {
+        width: 300vw;
+        transition: all 1s;
+      }
+      .slide-box {
+        width: 100vw;
+        float: left;
+      }
+      .slide-box img {
+        width: 100%;
+      }
+
+      $('.slide-2').on('click', function() {
+  $('.slide-container').css('transform', 'translateX(-100vw)');
+});
+      .slide-container {
+  width: 300vw;
+  transition: all 1s;
+  transform: translateX(-100vw);
+} 
+    </style>
+  </head>
+  <body>
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="./img/car1.png" />
+        </div>
+        <div class="slide-box">
+          <img src="./img/car2.png" />
+        </div>
+        <div class="slide-box">
+          <img src="./img/car3.png" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

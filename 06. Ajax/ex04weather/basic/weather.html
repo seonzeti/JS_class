@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>현재 날씨는?</h1>
+    <div id="container"></div>
+
+    <script>
+        const getJSON = (url, callback) => {
+            const xhr = new XMLHttpRequest(); // XMLHttpRequest : 서버에 데이터를 요청하기 위한 객체
+            xhr.open("GET", url, true);
+            xhr.responseType = "json";
+            xhr.onload = function () {
+                const status = xhr.status;
+                if (status === 200) {
+                    callback(null, xhr.response);
+                } else {
+                    callback(status, xhr.response);
+                }
+            };
+            xhr.send();
+        };
+
+        getJSON(
+            "http://api.openweathermap.org/data/2.5/weather?q=seoul&appid=1eb1d18602c0e2dde562cdc2005a4495&units=metric",
+
+            // 데이터에 접근에 성공했든, 성공하지 않았든 이 함수에 들어오게 됨 
+            // 성공 -> data 안에 값
+            // 실패 -> err 라는 매개변수에 값이 들어감! 
+            function (err, data) {
+                if (err !== null) {
+                    console.log("예상치 못한 오류 발생." + err);
+                } else {
+                    console.log("데이터에 접근 성공!")
+                    console.log(data.main)
+
+                    let container = document.getElementById("container");
+                    container.innerHTML += `<p>현재 기온 : ${data.main.temp}</p>`;
+                    container.innerHTML += `<p>최고 기온 : ${data.main.temp_max}</p>`;
+                    container.innerHTML += `<p>최저 기온 : ${data.main.temp_min}</p>`;
+                    // console.log(
+                    //     `현재 온도는 ${data.main.temp}°, 오늘의 최고기온은 ${data.main.temp_max}° 최저기온은 ${data.main.temp_min}°입니다.`
+                    // );
+
+                }
+            }
+        );
+
+    </script>
+</body>
+
+</html>

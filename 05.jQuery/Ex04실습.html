@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <button id='like'>좋아요</button><span>0</span>
     <br>
@@ -14,46 +16,45 @@
     <br>
     <div id="com">
         <p>첫댓글<button class='removeCom'>삭제</button></p>
-    </div>  
-    
+    </div>
+
     <script>
-      
-    
-        $(document).on("click","#like",function(e){ 
+        $(document).on("click", "#like", (e) => {
             var like = Number($('#like+span').text())
-            $('#like+span').text(like+1)
+            $('#like+span').text(like + 1)
 
             $(this).text('좋아요 취소')
-            $(this).removeAttr('id','like')
-            $(this).attr('id','dislike')
+            $(this).removeAttr('id', 'like')
+            $(this).attr('id', 'dislike')
         });
 
-        $(document).on("click","#dislike",function(e){ 
+        $(document).on("click", "#dislike", (e) => {
             var like = Number($('#dislike+span').text())
-            $('#dislike+span').text(like-1)
+            $('#dislike+span').text(like - 1)
 
             $(this).text('좋아요')
-            $(this).removeAttr('id','dislike')
-            $(this).attr('id','like')
+            $(this).removeAttr('id', 'dislike')
+            $(this).attr('id', 'like')
         });
 
 
-        $('.writeCom').click(function(){
+        $('.writeCom').click(() => {
             var com = $('input[type=text]').val()
-            $('#com').prepend('<p>'+com+'<button class="removeCom">삭제</button></p>')
+            $('#com').prepend('<p>' + com + '<button class="removeCom">삭제</button></p>')
             $('input[type=text]').val("")
         })
 
-        $('.removeCom').click(function(){
+        $('.removeCom').click(() => {
             $(this).parent().remove()
         })
 
-        $("#com").on("click",".removeCom",function(e){ 
+        $("#com").on("click", ".removeCom", (e) => {
             $(this).parent().remove()
         });
 
-        
+
 
     </script>
 </body>
+
 </html>

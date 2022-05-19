@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #redBox{
+            background-color: red;
+        }
+        #blueBox{
+            background-color: blue;
+
+        }
+        #greenBox{
+            background-color: green;
+        }
+        #grayBox{
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="redBox"></div>
+    <div id="blueBox"></div>
+    <div id="greenBox"></div>
+    <div id="grayBox"></div>
+    <button onclick="margin()">이동하기!</button>
+    <button onclick="radius()">둥글게!</button>
+
+    <script>
+        
+        let red = document.getElementById('redBox');
+        let blue = document.getElementById('blueBox');
+        let green = document.getElementById('greenBox');
+        let gray = document.getElementById('grayBox');
+
+        let margin = () => {
+            blue.style.marginLeft = '100px';
+            green.style.marginLeft = '200px';
+            gray.style.marginLeft = '300px';
+        }
+
+        let radius = () => {
+            red.style.borderTopRightRadius = '50%'
+            red.style.borderBottomLeftRadius = '50%'
+            blue.style.borderTopRightRadius = '50%'
+            blue.style.borderBottomLeftRadius = '50%'
+            green.style.borderTopRightRadius = '50%'
+            green.style.borderBottomLeftRadius = '50%'
+            gray.style.borderTopRightRadius = '50%'
+            gray.style.borderBottomLeftRadius = '50%'
+        }
+
+    </script>
+</body>
+</html>

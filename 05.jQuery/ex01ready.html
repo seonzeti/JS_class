@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
    <!-- 2. CDN을 이용해서 사용 -->
    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 </head>
+
 <body>
    <p>제이쿼리가 적용되지 않았습니다!</p>
 
@@ -20,12 +22,13 @@
 
    <script>
       // 만약에, 브라우저가 DOM 트리를 생성해서 사용할 준비가 됐다면! 
-      // $(document).ready(function(){
+      // $(document).ready(()=>{
       //    $('p').text('DOM이 완성되었습니다. 코드를 작성해주세요!')
       // })
 
-      $(function(){
+      // 예) 이미지가 많은 페이지 -> 오래 걸림 
 
+      $(() => {
          //JS의 .innerText = jQuery의 .text
          // $('p').text('<h1>DOM이 완성되었습니다. 코드를 작성해주세요!</h1>')
 
@@ -40,4 +43,5 @@
 
    </script>
 </body>
+
 </html>

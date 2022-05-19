@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //매개변수 없는 경우
+        let print = () => console.log("print!")
+        print()
+        
+        //매개변수 1개
+        let num = 1
+        let printNum = num => console.log(num)
+        printNum(num)
+
+        //매개변수 여러개
+        let num2 = 2
+        let addNum = (num,num2) => console.log(num+num2)
+        addNum(num,num2)
+
+        //코드 여러줄 작성
+        let addNum2 = (num,num2) => {
+            let num3 = 3
+            return num+num2+num3
+        }
+        console.log(addNum2(num,num2))
+
+    
+
+    </script>
+</body>
+</html>
